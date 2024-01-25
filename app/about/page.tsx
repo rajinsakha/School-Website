@@ -78,16 +78,15 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="flex flex-1">
+        <div className="flex-1 relative">
           <Image
             src={about}
             sizes="100vw"
             alt="about-us"
             style={{
-              width: "100%",
-              height: "500px",
-              objectFit: "cover",
+              objectFit: "contain",
             }}
+            fill
           />
         </div>
       </div>
