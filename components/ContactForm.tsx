@@ -38,7 +38,7 @@ const ContactForm = () => {
           placeholder="Enter your name"
           onChange={contactFormik.handleChange}
           value={contactFormik.values.fullname}
-          className="text-white dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
+          className=" dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
         />
       </div>
 
@@ -50,7 +50,7 @@ const ContactForm = () => {
           placeholder="Enter your email"
           onChange={contactFormik.handleChange}
           value={contactFormik.values.email}
-          className="text-white dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
+          className=" dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
         />
       </div>
 
