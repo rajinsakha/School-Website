@@ -18,7 +18,6 @@ const Hero = () => {
           Welcome To
           <span className="block mt-4">Shree Janak Secondary School</span>{" "}
         </h1>
-
         <p>We believe in providing education for everyone</p>
         <Button asChild className= "bg-blue-600 dark:bg-blue-600  hover:bg-blue-800 dark:text-white dark:hover:bg-blue-800">
           <Link href="/contact">Contact Us</Link>

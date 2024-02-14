@@ -6,8 +6,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Next Blog",
-  description: "A blog platform where one can share their views.",
+  title: "Shree Janak Secondary School",
+  description: "",
 };
 
 export default function RootLayout({

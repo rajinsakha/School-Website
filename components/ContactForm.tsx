@@ -43,7 +43,7 @@ const ContactForm = () => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="email"  className="text-white">Email</Label>
+        <Label htmlFor="email" className="text-white">Email</Label>
         <Input
           name="email"
           type="email"
