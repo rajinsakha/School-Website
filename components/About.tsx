@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <section className="padding flex gap-24">
+    <section className="padding flex flex-col gap-24 lg:flex-row">
       <Image
         src="/hero.jpeg"
         alt="About Image"
@@ -14,8 +14,6 @@ const About = () => {
         height={0}
         sizes="100vw"
         className="flex-1 w-full h-[500px] object-cover"
-
-        
       />
 
       <div className="flex-1 flex flex-col gap-8">
