@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import FeatureSection from "@/components/FeatureSection";
+import GallerySection from "@/components/GallerySection";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <FeatureSection />
+      <GallerySection />
 
     </main>
     </>

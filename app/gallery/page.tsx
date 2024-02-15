@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-interface Image {
+export interface IImage {
   url: string;
 }
 
-const images: Image[] = [
+export const images: IImage[] = [
   { url: "/Hero.jpeg" },
   { url: "/Hero.jpeg" },
   { url: "/Hero.jpeg" },
@@ -31,7 +31,7 @@ const GalleryPage = () => {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        {images.map((image: Image, index: number) => (
+        {images.map((image: IImage, index: number) => (
           <Image
             key={index}
             alt="Hello"
