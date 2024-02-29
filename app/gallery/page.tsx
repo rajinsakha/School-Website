@@ -28,12 +28,15 @@ const GalleryPage = () => {
   ];
 
   return (
-    <section className="padding flex flex-col justify-center items-center gap-12">
-      <div>
-        <h1 className="text-5xl font-bold">Gallery</h1>
+    <section className="flex flex-col ">
+          <div className="padding bg-blue-700 flex items-center justify-center">
+        <h1 className="text-white font-bold text-5xl tracking-wide">
+         Gallery
+        </h1>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <section className="padding flex flex-col justify-center items-center gap-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {images.map((image: ImageProps, index: number) => (
           <Image
             key={index}
@@ -47,10 +50,11 @@ const GalleryPage = () => {
               objectFit:'cover',
               objectPosition:"50% 50%",
             }}
-            className="hover:opacity-50 cursor-pointer transition h-[216px]"
+            className="hover:scale-110  cursor-pointer transition h-[216px]"
           />
         ))}
       </div>
+      </section>
     </section>
   );
 };

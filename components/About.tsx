@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section className="padding flex flex-col gap-24 lg:flex-row">
       <Image
-        src="/hero.jpeg"
+        src="/Teachers.jpg"
         alt="About Image"
         width={0}
         height={0}

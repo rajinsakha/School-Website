@@ -30,7 +30,7 @@ const GallerySection = () => {
       >
         <Link href="/gallery">View all Photos</Link>
       </Button>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {images.slice(0, 5).map((image: ImageProps, index: number) => (
           <Image
             key={index}
@@ -45,7 +45,7 @@ const GallerySection = () => {
               objectFit: "contain",
               objectPosition: "50% 50%",
             }}
-            className="hover:opacity-50 cursor-pointer transition "
+            className="hover:scale-110 cursor-pointer transition "
           />
         ))}
       </div>
