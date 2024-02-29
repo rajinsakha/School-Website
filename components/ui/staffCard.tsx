@@ -13,9 +13,9 @@ const StaffCard = ({ staffInfo }: { staffInfo: IStaffCard }) => {
         sizes="100vw"
         style={{
           width: "100%",
-        height:"100%",
-        
+        height:"220px",
           objectFit: "cover",
+          objectPosition:"50% 15%",
           borderRadius:'8px'
         }}
         

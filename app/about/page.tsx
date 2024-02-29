@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import about from "../../public/Hero.jpeg";
+import about from "../../public/Teachers.jpg";
 import StaffCard from "@/components/ui/staffCard";
 import { IStaffCard } from "@/interface/AboutPage";
 
@@ -14,46 +14,89 @@ const AboutPage = () => {
 
   const staffInfo: IStaffCard[] = [
     {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
+      url: "/JeevanRana.jpg",
+      name: "Jeevan Rana",
       position: "Primary Teacher",
     },
     {
-      url: "/rajin2.jpg",
-      name: "First Teacher",
+      url: "/BirendraJarghaMagar.jpg",
+      name: "Birendra Jargha Magar",
+      position: "Lower Secondary Teacher",
+    },
+    {
+      url: "/GitaPataMagar.jpg",
+      name: "Gita Pata Magar",
       position: "Primary Teacher",
     },
     {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
+      url: "/KopilaPhuyal.jpg",
+      name: "Kopila Phuyal",
+      position: "Office Helper",
+    },
+    {
+      url: "/PratimaRanaMagar.jpg",
+      name: "Pratima Rana Magar",
+      position: "ECD Teacher",
+    },
+    {
+      url: "/BuddhimanLopchana.jpg",
+      name: "Buddhiman Lopchan",
+      position: "Lower Secondary Teacher",
+    },
+    {
+      url: "/KrishnaPrasadTimalsina.jpg",
+      name: "Krishna Prasad Timalsina",
       position: "Primary Teacher",
     },
     {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
+      url: "/NehaLama.jpg",
+      name: "Neha Lama",
+      position: "Lower Secondary Teacher",
+    },
+    {
+      url: "/PrakashAcharya.jpg",
+      name: "Prakash Acharya",
+      position: "Lower Secondary Teacher",
+    },
+    {
+      url: "/PurnaBahadurGole.jpg",
+      name: "Purna Bahadur Gole",
+      position: "Administrative Assistant",
+    },
+    {
+      url: "/RashmiSapkota.jpg",
+      name: "Rashmi Sapkota",
+      position: "Secondary Level Teacher",
+    },
+    {
+      url: "/Roshani.jpg",
+      name: "Roshani Thapa",
+      position: "Lower Secondary Teacher",
+    },
+    {
+      url: "/SapanaGurmachhan.jpg",
+      name: "Sapana Gurmachhan",
       position: "Primary Teacher",
     },
     {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
-      position: "Primary Teacher",
+      url: "/SharadaAryal.jpg",
+      name: "Sharada Aryal",
+      position: "Secondary Teacher",
     },
-    {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
-      position: "Primary Teacher",
-    },
-    {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
-      position: "Primary Teacher",
-    },
-    {
-      url: "/Hero.jpeg",
-      name: "First Teacher",
-      position: "Primary Teacher",
-    },
+    
   ];
+
+  const sortedStaffInfo = staffInfo.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <section>
@@ -68,6 +111,14 @@ const AboutPage = () => {
             develop their capacities.
             <br />
             <br />
+            Our school is characterized by a perfect balance of formal education
+            according to the national curriculum, additional subjects and
+            activities, with an emphasis on sports and creativity. We have
+            designed the perfect combination of content that is implemented so
+            that every child is given the opportunity to discover, meet, develop
+            and nurture their talents and start further education ready for all
+            life’s challenges.
+
             Our school is characterized by a perfect balance of formal education
             according to the national curriculum, additional subjects and
             activities, with an emphasis on sports and creativity. We have
@@ -113,7 +164,7 @@ const AboutPage = () => {
           <div className="flex flex-col items-center gap-6">
             <h4 className="text-2xl font-semibold uppercase">Teaching Staff</h4>
             <div className="grid grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 ">
-              {staffInfo.map((staff) => (
+              {sortedStaffInfo.map((staff) => (
                 <StaffCard key={staff.name} staffInfo={staff} />
               ))}
             </div>
