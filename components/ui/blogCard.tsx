@@ -1,12 +1,15 @@
+import { IEvent } from "@/interface/EventPage";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const BlogCard = () => {
+
+
+const BlogCard = ({event}:{event:IEvent}) => {
   return (
     <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer">
       <Image
-        src="/Hero.jpeg"
+        src={event.image_url}
         alt="Event Image"
         width={0}
         height={0}
@@ -20,11 +23,10 @@ const BlogCard = () => {
       />
 
       <div className="flex flex-col gap-2 text-black">
-        <p>21st Nov, 2023</p>
-        <h3 className="font-semibold text-xl">Blog Title</h3>
+        <p>{event.date}</p>
+        <h3 className="font-semibold text-xl">{event.title}</h3>
         <p className="text-sm">
-          Description in Short. Needs to Be Splitted so that it does not exceed
-          the length of the card. Will focus on that.
+          {event.body}
         </p>
       </div>
       <Link

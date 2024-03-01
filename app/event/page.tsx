@@ -1,7 +1,28 @@
+"use client";
 import BlogCard from "@/components/ui/blogCard";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import axios from "axios";
+import { getAllEvents } from "@/lib/api/api";
+import { IEvent } from "@/interface/EventPage";
 
 const Page = () => {
+  const [events, setEvents] = useState<IEvent[]>([]);
+
+  const getData = useCallback(async () => {
+    try {
+      let res = await getAllEvents();
+      if (res.status === 200) {
+        setEvents(res.data);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
   return (
     <section className="flex flex-col">
       <div className="padding bg-blue-700 flex items-center justify-center">
@@ -11,14 +32,9 @@ const Page = () => {
       </div>
 
       <div className="padding grid  grid-cols-1  min-[500px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12 bg-slate-200 ">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {events.map((event) => (
+          <BlogCard event={event} key={event.id} />
+        ))}
       </div>
     </section>
   );

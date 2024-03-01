@@ -8,22 +8,28 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
-import { IEvent } from "@/interface/EventPage";
+import { IAddEvent, IEvent } from "@/interface/EventPage";
+import { addEvent } from "@/lib/api/api";
 
 const EventForm = () => {
-  const initialValues = {
+  const initialValues:any = {
     title: "",
     description: "",
     image: "",
   };
 
-  const eventFormik = useFormik<IEvent>({
+  const eventFormik = useFormik<IAddEvent>({
     initialValues: initialValues,
     validationSchema: eventFormSchema,
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: async (values, { resetForm }) => {
       // Handle form submission logic here
       console.log("Form submitted with values:", values);
-      resetForm();
+      const res = await addEvent(values);
+      if(res.status === 200){
+        resetForm();
+        console.log(res.data);
+      }
+     
     },
   });
 
