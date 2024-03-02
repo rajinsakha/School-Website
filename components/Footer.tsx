@@ -38,7 +38,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="padding flex flex-col">
+    <footer className="padding flex flex-col bg-slate-200">
       <section className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
             <div>
                 <Image src='/logo.jpg' alt="School Logo" width={80} height={80} />
