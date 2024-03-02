@@ -23,7 +23,7 @@ const BlogCard = ({event}:{event:IEvent}) => {
 
 
   return (
-    <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer">
+    <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer ">
       <Image
         src={event.image_url || '/hero.jpeg'}
         alt="Event Image"

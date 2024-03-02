@@ -5,16 +5,19 @@ import React from 'react'
 
 const EventCard = ({event}:{event:IEvent}) => {
   return (
-    <Link href={`/event/${event.id}`} className='flex gap-4' >
+    
+    <div  className='flex gap-4  border-b border-slate-400 pb-4 text-white' >
+      <Link href={`/event/${event.id}`}>
+      <Image src='/hero.jpeg' alt='Hero' width={100} height={100} sizes='100vw' />
+      </Link>
       
-       <Image src='/hero.jpeg' alt='Hero' width={100} height={100} sizes='100vw' />
 
-       <div className='flex flex-col gap-4'>
+       <Link href={`/event/${event.id}`} className='flex flex-col gap-4'>
          <h1>{event.title}</h1>
          <p>{event?.body?.substring(0,50)+"..."}</p>
-       </div>
+       </Link>
 
-    </Link>
+    </div>
   )
 }
 

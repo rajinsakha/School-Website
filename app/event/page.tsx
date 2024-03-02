@@ -31,7 +31,7 @@ const Page = () => {
         </h1>
       </div>
 
-      <div className="padding grid  grid-cols-1  min-[500px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12 bg-slate-200 ">
+      <div className="padding grid  grid-cols-1  min-[500px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12 bg-slate-300 ">
         {events.map((event) => (
           <BlogCard event={event} key={event.id} />
         ))}

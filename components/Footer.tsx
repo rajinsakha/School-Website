@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Links from "./Links";
+
 import Link from "next/link";
 import Icon from "./ui/icon";
 import { HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
@@ -38,11 +38,11 @@ const Footer = () => {
 
 
   return (
-    <footer className="padding flex flex-col bg-slate-200">
+    <footer className="padding flex flex-col bg-slate-200 dark:bg-blue-950">
       <section className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
             <div>
                 <Image src='/logo.jpg' alt="School Logo" width={80} height={80} />
-                <p>Shree Janak Secondary School is an goverment based institution established in 2030 B.S. which provides education upto Grade Ten. It is located at Southern Lalitpur.</p>
+                <p className="mt-4">Shree Janak Secondary School is an goverment based institution established in 2030 B.S. which provides education upto Grade Ten. It is located at Southern Lalitpur.</p>
             </div>
             
             <div className="flex flex-col gap-6">
