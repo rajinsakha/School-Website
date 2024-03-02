@@ -1,21 +1,50 @@
+"use client";
 import EventSideBar from "@/components/EventSideBar";
+import { IEvent } from "@/interface/EventPage";
+import { getSingleEvent } from "@/lib/api/api";
 import Image from "next/image";
-import React from "react";
+import { useParams } from "next/navigation";
+import React, { useCallback, useEffect, useState } from "react";
 
-const Page = () => {
+const Page = () => {   
+  
+  const [event, setEvent] = useState<IEvent>();
+
+  const params = useParams();
+
+  console.log(params);
+
+  
+  const getData = useCallback(async () => {
+    try {
+      let res = await getSingleEvent(Number(params.id));
+      if (res.status === 200) {
+        console.log(res.data);
+        setEvent(res.data);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, [params]);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
+  
+
   return (
     <section>
       <div className="padding bg-sky-800 flex items-center justify-center">
         <h1 className="text-white font-bold text-5xl tracking-wide">
-          Event Title
+       {event?.title}
         </h1>
       </div>
 
       <div className="px-8 sm:px-16 md:px-32 lg:px-40 padding-y flex gap-24 bg-sky-700">
         <div className="flex flex-col gap-4 w-full md:w-[70vw] lg:w-[50vw]">
-          <h3 className="text-left text-2xl">This is Event Title</h3>
+          <h3 className="text-left text-2xl">{event?.title}</h3>
           <Image
-            src="/Hero.jpeg"
+            src={ event?.image_url || "/Hero.jpeg"}
             alt="Single Event"
             width={0}
             height={0}
@@ -23,12 +52,7 @@ const Page = () => {
             className="w-full h-[50vh] object-cover object-center"
           />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            earum, velit facere illum tempore rerum iure aut harum itaque iste
-            illo similique voluptas laborum aliquam ut, quisquam animi deserunt
-            mollitia perspiciatis libero optio molestias nisi. Beatae vel unde
-            dignissimos magni repellat, inventore cum aspernatur in quisquam?
-            Tenetur atque et eum.
+           {event?.body}
           </p>
         </div>
 

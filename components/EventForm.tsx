@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 
@@ -8,28 +8,44 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
-import { IAddEvent, IEvent } from "@/interface/EventPage";
+import { IAddEvent } from "@/interface/EventPage";
 import { addEvent } from "@/lib/api/api";
 
 const EventForm = () => {
-  const initialValues:any = {
+  const initialValues = {
     title: "",
-    description: "",
-    image: "",
+    body: "",
+    image: null,
+  };
+
+  const resetForm = () => {
+    eventFormik.setValues(initialValues);
+    eventFormik.setTouched({});
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length) {
+      const file = event.target.files[0];
+      eventFormik.setFieldValue("image", file);
+    }
   };
 
   const eventFormik = useFormik<IAddEvent>({
     initialValues: initialValues,
     validationSchema: eventFormSchema,
-    onSubmit: async (values, { resetForm }) => {
+    onSubmit: async (values) => {
       // Handle form submission logic here
-      console.log("Form submitted with values:", values);
-      const res = await addEvent(values);
-      if(res.status === 200){
-        resetForm();
-        console.log(res.data);
+      console.log("Form Submitted!");
+      try {
+        console.log("Form submitted with values:", values);
+        const res = await addEvent(values);
+        if (res.status === 201) {
+          resetForm();
+          console.log(res.data);
+        }
+      } catch (e) {
+        console.log(e);
       }
-     
     },
   });
 
@@ -37,6 +53,7 @@ const EventForm = () => {
     <form
       onSubmit={eventFormik.handleSubmit}
       className="flex-1 flex flex-col gap-4 max-w-sm w-full"
+      encType="multipart/form-data"
     >
       <div className="flex flex-col gap-2">
         <Label htmlFor="title" className="text-black dark:text-white">
@@ -48,36 +65,43 @@ const EventForm = () => {
           placeholder="Enter your name"
           onChange={eventFormik.handleChange}
           value={eventFormik.values.title}
-          className=" dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
         />
+        {eventFormik.errors.title && eventFormik.touched.title ? (
+          <p className="text-red-600 mt-1 text-[13.4px]">
+            {eventFormik.errors.title}
+          </p>
+        ) : null}
       </div>
 
       <div className="flex flex-col gap-2">
         <Label htmlFor="file" className="text-black dark:text-white">
           Image
         </Label>
-        <Input
-          name="file"
-          type="file"
-          placeholder="Enter your email"
-          onChange={eventFormik.handleChange}
-          value={eventFormik.values.image}
-          className=" dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
-        />
+        <Input name="file" type="file" accept="image/*" onChange={handleFileChange} />
+        {eventFormik.errors.image && eventFormik.touched.image ? (
+          <p className="text-red-600 mt-1 text-[13.4px]">
+            {eventFormik.errors.image}
+          </p>
+        ) : null}
       </div>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="description" className="text-black dark:text-white">
+        <Label htmlFor="body" className="text-black dark:text-white">
           Description
         </Label>
         <Textarea
           placeholder="Enter your description"
-          name="description"
-          id="description"
+          name="body"
+          id="body"
           onChange={eventFormik.handleChange}
-          value={eventFormik.values.description}
-          className="resize-none dark:text-black dark:bg-slate-100 dark:placeholder:text-black"
+          value={eventFormik.values.body}
+          className="resize-none "
         />
+        {eventFormik.errors.body && eventFormik.touched.body ? (
+          <p className="text-red-600 mt-1 text-[13.4px]">
+            {eventFormik.errors.body}
+          </p>
+        ) : null}
       </div>
 
       <Button type="submit" className="w-fit mt-4 ">
