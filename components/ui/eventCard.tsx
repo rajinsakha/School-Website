@@ -1,18 +1,20 @@
+import { IEvent } from '@/interface/EventPage'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
-const EventCard = () => {
+const EventCard = ({event}:{event:IEvent}) => {
   return (
-    <div className='flex gap-4'>
+    <Link href={`/event/${event.id}`} className='flex gap-4' >
       
        <Image src='/hero.jpeg' alt='Hero' width={100} height={100} sizes='100vw' />
 
        <div className='flex flex-col gap-4'>
-         <h1>ANNUAL SCHOOL PROGRAM</h1>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, odio? ...</p>
+         <h1>{event.title}</h1>
+         <p>{event?.body?.substring(0,50)+"..."}</p>
        </div>
 
-    </div>
+    </Link>
   )
 }
 

@@ -4,7 +4,7 @@ import { IEvent } from "@/interface/EventPage";
 import { getSingleEvent } from "@/lib/api/api";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { Suspense, useCallback, useEffect, useState } from "react";
 
 const Page = () => {   
   
@@ -31,10 +31,6 @@ const Page = () => {
     getData();
   }, [getData]);
 
-  if(event?.body){
-    const bodyLines = event?.body.split("\n");
-  }
-  
 
   return (
     <section>
@@ -63,7 +59,10 @@ const Page = () => {
         </div>
 
         <div className="flex flex-col gap-4 w-full sm:w-[30vw]">
-            <EventSideBar />
+     
+        <EventSideBar/>
+ 
+            
         </div>
       </div>
     </section>
