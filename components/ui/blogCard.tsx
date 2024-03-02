@@ -6,6 +6,22 @@ import React from "react";
 
 
 const BlogCard = ({event}:{event:IEvent}) => {
+
+  function extractFirst100Characters(inputString:string) {
+    if (inputString.length <= 100) {
+        return inputString; // Return the whole string if it's 100 characters or less
+    } else {
+        let lastSpaceIndex = inputString.lastIndexOf(' ', 100); // Find the last space within the first 100 characters
+        if (lastSpaceIndex !== -1) {
+            return inputString.substring(0, lastSpaceIndex) + "..."; // Extract up to the last space
+        } else {
+            // If there's no space within the first 100 characters, just take the first 100 characters
+            return inputString.substring(0, 100)+"..";
+        }
+    }
+}
+
+
   return (
     <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer">
       <Image
@@ -26,7 +42,7 @@ const BlogCard = ({event}:{event:IEvent}) => {
         <p>{event.date}</p>
         <h3 className="font-semibold text-xl">{event.title}</h3>
         <p className="text-sm">
-          {event.body}
+          {extractFirst100Characters(event?.body)}
         </p>
       </div>
       <Link

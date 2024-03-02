@@ -5,7 +5,7 @@ export interface IEvent{
     date: string;
     image: null;
     image_url: any;
-    body: null | string;
+    body: string;
   }
 
   export interface IAddEvent{

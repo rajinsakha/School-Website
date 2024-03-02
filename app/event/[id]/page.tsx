@@ -30,6 +30,10 @@ const Page = () => {
   useEffect(() => {
     getData();
   }, [getData]);
+
+  if(event?.body){
+    const bodyLines = event?.body.split("\n");
+  }
   
 
   return (
@@ -51,9 +55,11 @@ const Page = () => {
             sizes="100vw"
             className="w-full h-[50vh] object-cover object-center"
           />
-          <p>
-           {event?.body}
-          </p>
+          <div>
+           {event?.body.split("\n").map((line,index)=>(
+            <p key={index} className="mb-8">{line}</p>
+           ))}
+          </div>
         </div>
 
         <div className="flex flex-col gap-4 w-full sm:w-[30vw]">
