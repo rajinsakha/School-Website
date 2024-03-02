@@ -7,7 +7,7 @@ import { IStaffCard } from "@/interface/AboutPage";
 
 const AboutPage = () => {
   const principalInfo: IStaffCard = {
-    url: "/Hero.jpeg",
+    url: "/hede.png",
     name: "Gokarna Bahadur Phuyal",
     position: "Principal",
   };
@@ -83,10 +83,72 @@ const AboutPage = () => {
       name: "Sharada Aryal",
       position: "Secondary Teacher",
     },
+
     
   ];
 
+  const tfnStaff:IStaffCard[]=[
+    {
+      url: "/DikshyaKhadka.jpg",
+      name: "Dikshya Khadka",
+      position: "English Teacher",
+    },
+    {
+      url: "/GaneshBasnet.jpg",
+      name: "Ganesh Basnet",
+      position: "Science Teacher",
+    },
+    {
+      url: "/GaurabShrestha.jpeg",
+      name: "Gaurab Shrestha",
+      position: "Science Teacher",
+    },
+    {
+      url: "/MilanKumarSardarTharu.jpeg",
+      name: "Milan Kumar Sardar Tharu",
+      position: "English Teacher",
+    },
+    {
+      url: "/RavindranathDahal.jpeg",
+      name: "Ravindra Nath Dahal",
+      position: "Math Teacher",
+    },
+    {
+      url: "/RobinChaudhary.jpg",
+      name: "Robin Chaudhary",
+      position: "Science Teacher",
+    },
+    {
+      url: "/SamitaTamang.jpg",
+      name: "Samita Tamang",
+      position: "English Teacher",
+    },
+    {
+      url: "/SuruchiShahi.jpg",
+      name: "Suruchi Shahi",
+      position: "English Teacher",
+    },
+    {
+      url: "/UjjwalShrestha.jpg",
+      name: "Ujjwal Shrestha",
+      position: "Math Teacher",
+    },
+  ]
+
+
   const sortedStaffInfo = staffInfo.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  const sortedTFNStaff = tfnStaff.sort((a, b) => {
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();
     if (nameA < nameB) {
@@ -169,6 +231,18 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
+
+          <div className="flex flex-col items-center gap-6">
+            <h4 className="text-2xl font-semibold uppercase">TFN Alumni</h4>
+            <div className="grid grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 ">
+              {sortedTFNStaff.map((staff) => (
+                <StaffCard key={staff.name} staffInfo={staff} />
+              ))}
+            </div>
+          </div>
+
+
+
         </div>
       </div>
     </section>

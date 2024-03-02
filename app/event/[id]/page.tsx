@@ -57,7 +57,7 @@ const Page = () => {
           />
           <div>
            {event?.body.split("\n").map((line,index)=>(
-            <p key={index} className="mb-8">{line}</p>
+            <p key={index} className="mb-6">{line}</p>
            ))}
           </div>
         </div>
