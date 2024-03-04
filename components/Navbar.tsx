@@ -49,7 +49,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-8 lg:hidden">
-        <ModeToggle />
+      
         <GiHamburgerMenu onClick={() => setToggleMenu(true)} />
 
         {toggleMenu && (

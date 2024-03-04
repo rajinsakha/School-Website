@@ -74,10 +74,10 @@ const EventForm = () => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="file" className="text-black dark:text-white">
+        <Label htmlFor="image" className="text-black dark:text-white">
           Image
         </Label>
-        <Input name="file" type="file" accept="image/*" onChange={handleFileChange} />
+        <Input name="image" type="file" accept="image/*" onChange={handleFileChange} />
         {eventFormik.errors.image && eventFormik.touched.image ? (
           <p className="text-red-600 mt-1 text-[13.4px]">
             {eventFormik.errors.image}

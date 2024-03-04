@@ -21,6 +21,14 @@ const BlogCard = ({event}:{event:IEvent}) => {
     }
 }
 
+function formatDate(isoDateString:string) {
+  const date = new Date(isoDateString);
+  const options:any = { year: "numeric", month: "long", day: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+}
+
+
+
 
   return (
     <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer ">
@@ -39,7 +47,7 @@ const BlogCard = ({event}:{event:IEvent}) => {
       />
 
       <div className="flex flex-col gap-2 text-black">
-        <p>{event.date}</p>
+        <p>{formatDate(event.date)}</p>
         <h3 className="font-semibold text-xl">{event.title}</h3>
         <p className="text-sm">
           {extractFirst100Characters(event?.body)}

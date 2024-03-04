@@ -23,7 +23,7 @@ const EventSection = ({events}:{events:IEvent[]}) => {
     >
       <Link href="/event">View all Events</Link>
     </Button>
-    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
+    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     {events.length === 0 ? (
     [...Array(4)].map((_, index) => <EventSkeleton  key={index} />)
   ) : (
