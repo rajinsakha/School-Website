@@ -31,7 +31,7 @@ function formatDate(isoDateString:string) {
 
 
   return (
-    <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer ">
+    <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer rounded-lg">
       <Image
         src={event.image_url || '/hero.jpeg'}
         alt="Event Image"
@@ -42,20 +42,21 @@ function formatDate(isoDateString:string) {
           width: "100%",
           height: "200px",
           objectFit: "cover",
-          objectPosition: "center",
+          objectPosition: "50% 20%",
+          borderRadius: '8px'
         }}
       />
 
-      <div className="flex flex-col gap-2 text-black">
+      <div className="flex flex-col gap-2 text-black ">
         <p>{formatDate(event.date)}</p>
-        <h3 className="font-semibold text-xl">{event.title}</h3>
+        <h3 className="font-semibold text-md sm:text-xl ">{event.title}</h3>
         <p className="text-sm">
           {extractFirst100Characters(event?.body)}
         </p>
       </div>
       <Link
         href={`/event/${event.id}`}
-        className=" flex items-center text-blue-500 hover:text-orange-600"
+        className=" flex items-center text-blue-500 hover:text-orange-600 mt-auto"
       >
         Read more<span className="text-2xl ml-1">&#8594;</span>
       </Link>

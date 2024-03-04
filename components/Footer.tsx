@@ -59,8 +59,8 @@ const Footer = () => {
             <div className="flex flex-col gap-6">
                 <h4 className="text-xl font-semibold">Contact</h4>
                 <div className="flex flex-col gap-3">
-                <Icon Icon={HiOutlinePhone} title="01-6654321" />
-                <Icon Icon={HiOutlineMail} title="shreejanak@gmail.com" />
+                <Icon Icon={HiOutlinePhone} title="9862797542" />
+                <Icon Icon={HiOutlineMail} title="janakmabigimdi@gmail.com" />
                 <Icon Icon={HiOutlineLocationMarker} title="Southern Lalitpur" />
                 </div>
             </div>
