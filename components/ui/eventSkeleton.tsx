@@ -7,27 +7,6 @@ import { Skeleton } from './skeleton';
 
 
 
-// const EventSkeleton = ({width}:{width:string}) => {
-
-
-//   return (
-//     <div className="flex flex-col gap-4 p-4 bg-white">
-//     <Skeleton className={`h-[200px] w-[${width}px] rounded-xl`} />
-//     <div className="space-y-2">
-//       <Skeleton className="h-4 w-[200px] rounded-none" />
-//       <Skeleton className="h-4 w-[260px] rounded-none" />
-//       <Skeleton className="h-12 w-[260px] rounded-none" />
-//       <Skeleton className="h-4 w-[125px] rounded-none" />
-//     </div>
-//   </div>
-//   );
-// };
-
-
-
-// export default EventSkeleton;
-
-
 
 const EventSkeleton = () => {
   return (

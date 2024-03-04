@@ -8,7 +8,7 @@ const EventCard = ({event}:{event:IEvent}) => {
     
     <div  className='flex gap-8 sm:gap-16 lg:gap-8  border-b border-slate-400 pb-4 text-white' >
       <Link href={`/event/${event.id}`}>
-      <Image src='/hero.jpeg' alt='Hero' width={0} height={0} sizes='100vw' className='w-auto max-h-[95px] object-cover'/>
+      <Image src={event?.image_url} alt='Hero' width={0} height={0} sizes='100vw' className='w-[95px] h-[95px] object-cover'/>
       </Link>
       
        <Link href={`/event/${event.id}`} className='flex-1 flex flex-col space-y-2'>
