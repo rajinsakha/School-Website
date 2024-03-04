@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import About from "@/components/About";
 import EventSection from "@/components/EventSection";
 import FeatureSection from "@/components/FeatureSection";
@@ -6,12 +6,11 @@ import GallerySection from "@/components/GallerySection";
 import Hero from "@/components/Hero";
 import { IEvent } from "@/interface/EventPage";
 import { getAllEvents } from "@/lib/api/api";
-import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 
 export default function Home() {
-
   const [events, setEvents] = useState<IEvent[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const getData = useCallback(async () => {
     try {
@@ -21,25 +20,25 @@ export default function Home() {
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      setLoading(false);
     }
   }, []);
 
   useEffect(() => {
     getData();
   }, [getData]);
-  
 
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between">
-      <Hero />
-      <About />
-      <FeatureSection />
-      <GallerySection />
-      <EventSection events={events} />
+        <Hero />
+        <About />
+        <FeatureSection />
+        <GallerySection />
 
-    </main>
+        <EventSection events={events} />
+      </main>
     </>
-    
   );
 }

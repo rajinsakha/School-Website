@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster"
 
-
-import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Shree Janak Secondary School",
@@ -18,15 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+     <Navbar />
           {children}
           <Toaster />
-        </ThemeProvider>
+          <Footer />
+
       </body>
     </html>
   );

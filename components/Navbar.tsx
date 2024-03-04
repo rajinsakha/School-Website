@@ -44,9 +44,8 @@ const Navbar = () => {
   return (
     <nav className="padding-x py-8 flex justify-between items-center w-full h-[50px]">
       <Image src="/logo.jpg" alt="logo" width={50} height={50} sizes="100vw" />
-      <div className="flex justify-between items-center gap-8 max-lg:hidden">
+      <div className="flex justify-between items-center gap-10 max-lg:hidden lg:mr-8">
         <Links links={navLinks} />
-        <ModeToggle />
       </div>
 
       <div className="flex items-center gap-8 lg:hidden">

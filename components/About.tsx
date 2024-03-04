@@ -6,15 +6,18 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <section className="padding flex flex-col gap-24 lg:flex-row">
+    <section className="padding flex flex-col-reverse gap-24 lg:flex-row">
+      <div className="flex-1">
       <Image
         src="/Teachers.jpg"
         alt="About Image"
         width={0}
         height={0}
         sizes="100vw"
-        className="flex-1 w-full h-[500px] object-cover"
+        className=" w-full h-auto object-contain"
       />
+      </div>
+     
 
       <div className="flex-1 flex flex-col gap-8">
         <Title title="About Us" />
