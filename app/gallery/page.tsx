@@ -16,7 +16,7 @@ const GalleryPage = () => {
     { url: "/Class7.jpg" },
     { url: "/Class8.jpg" },
     { url: "/Class9.jpg" },
-    { url: "/Class10.jpg" },
+    { url: "/class10.jpg" },
     { url: "/ClassECD.jpg" },
     {url:"/plant.jpg"},
     {url:"/winnerstudent.jpg"},
