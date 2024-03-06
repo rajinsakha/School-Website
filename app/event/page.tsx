@@ -32,7 +32,7 @@ const Page = () => {
         </h1>
       </div>
 
-      <div className="padding grid  grid-cols-1  min-[500px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 bg-slate-300 ">
+      <div className="padding grid  grid-cols-1  min-[500px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 bg-slate-300 w-full">
         {events.length === 0
           ? [...Array(4)].map((_, index) => <EventSkeleton key={index} />)
           : events.map((event, index) => (

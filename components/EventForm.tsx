@@ -26,6 +26,7 @@ const EventForm = () => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length) {
       const file = event.target.files[0];
+      console.log(file);
       eventFormik.setFieldValue("image", file);
     }
   };

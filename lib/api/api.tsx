@@ -30,6 +30,10 @@ export const getSingleEvent = async (id: number) => {
 
 
 export const addEvent = async (formData:IAddEvent) =>{
-   const event = await axios.post("https://sjss-backend-1.onrender.com/api/events/create/",formData)
+  let headers = { headers: {
+    "Content-Type": "multipart/form-data",
+  },
+};
+   const event = await axios.post("https://vercel-test-xi-one.vercel.app/api/events/create/",formData,headers)
    return event;
 }
