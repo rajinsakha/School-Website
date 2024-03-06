@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['res.cloudinary.com'],
+        domains: ['vercel-test-xi-one.vercel.app'],
       },
 };
 

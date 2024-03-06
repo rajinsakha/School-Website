@@ -49,7 +49,7 @@ const Footer = () => {
                 <h4 className="text-xl font-semibold">Quick Links</h4>
                 <div className="flex flex-col gap-3">
                 {footerLinks.map((link)=>(
-                    <Link href={link.path} key={link.title}>{link.title}</Link>
+                    <Link href={link.path} key={link.title} className="hover:text-blue-700">{link.title}</Link>
 
                 ))}
                 </div>
@@ -61,7 +61,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-3">
                 <Icon Icon={HiOutlinePhone} title="9862797542" />
                 <Icon Icon={HiOutlineMail} title="janakmabigimdi@gmail.com" />
-                <Icon Icon={HiOutlineLocationMarker} title="Southern Lalitpur" />
+                <Icon Icon={HiOutlineLocationMarker} title="Gimdi, Katuwa, Lalitpur" />
                 </div>
             </div>
 

@@ -83,11 +83,9 @@ const AboutPage = () => {
       name: "Sharada Aryal",
       position: "Secondary Teacher",
     },
-
-    
   ];
 
-  const tfnStaff:IStaffCard[]=[
+  const tfnStaff: IStaffCard[] = [
     {
       url: "/DikshyaKhadka.jpg",
       name: "Dikshya Khadka",
@@ -133,8 +131,7 @@ const AboutPage = () => {
       name: "Ujjwal Shrestha",
       position: "Math Teacher",
     },
-  ]
-
+  ];
 
   const sortedStaffInfo = staffInfo.sort((a, b) => {
     const nameA = a.name.toLowerCase();
@@ -166,29 +163,21 @@ const AboutPage = () => {
         <div className="flex flex-1 flex-col gap-8">
           <h1 className="text-4xl font-bold">About US</h1>
           <p className="text-base text-justify">
-            The need for quality and comprehensive upbringing and education of
-            children led us to establishing Sopot Hill and thus, through
-            integrated programs in the field of language, art, sport and other
-            activities, provide young generations with the opportunity to
-            develop their capacities.
-            <br />
-            <br />
-            Our school is characterized by a perfect balance of formal education
-            according to the national curriculum, additional subjects and
-            activities, with an emphasis on sports and creativity. We have
-            designed the perfect combination of content that is implemented so
-            that every child is given the opportunity to discover, meet, develop
-            and nurture their talents and start further education ready for all
-            life’s challenges.
-
-            Our school is characterized by a perfect balance of formal education
-            according to the national curriculum, additional subjects and
-            activities, with an emphasis on sports and creativity. We have
-            designed the perfect combination of content that is implemented so
-            that every child is given the opportunity to discover, meet, develop
-            and nurture their talents and start further education ready for all
-            life’s challenges.
+            Tulasi Prasad Dhodari, a resident of Katuwa in South Lalitpur, had
+            great interests in politics. He was a Pradhanpancha during Panchayat
+            System in Nepal. During a local election in his village, his
+            nomination was unlisted and his opposition leaders tried to cheat on
+            him because he was not educated. This incident made him want to open
+            a school in his village so that children there would be educated and
+            wouldn’t have to face domination from others like he did. That’s
+            what led to the establishment of Janak Secondary School (initially
+            named Katuwa Primary School) in 1973 AD. With the increasing number
+            of students, the school was upgraded as Lower Secondary School in
+            2033 BS (1976 AD) and Secondary School in 2068 BS (2011 AD).
+            <br /><br />
+            Students from different ethnic backgrounds including Brahmin, Chhetri, Tamang, Magar and Dalits are enrolled in the school’s ECD classes to Grade 10. Some of the students walk for 3 hours to come to school as there is no hostel for the students. The families of the students are involved in farming, foreign employment and various small scale local businesses for livelihood
           </p>
+
         </div>
 
         <div className="flex-1 relative">
@@ -240,9 +229,6 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-
-
-
         </div>
       </div>
     </section>

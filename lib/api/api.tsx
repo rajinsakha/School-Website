@@ -8,7 +8,7 @@ export const getAllEvents = async () => {
     },
   };
   const events = await axios.get(
-    "https://sjss-backend-1.onrender.com/api/events/detail/",
+    "https://vercel-test-xi-one.vercel.app/api/events/detail/",
     headers
   );
   console.log(events);
@@ -22,7 +22,7 @@ export const getSingleEvent = async (id: number) => {
     },
   };
   const event = await axios.get(
-    `https://sjss-backend-1.onrender.com/api/events/${id}/`,
+    `https://vercel-test-xi-one.vercel.app/api/events/${id}/`,
     headers
   );
   return event;

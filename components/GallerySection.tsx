@@ -21,7 +21,7 @@ const GallerySection = () => {
  
   ];
   return (
-    <div className="padding flex flex-col gap-8 items-center">
+    <div className="padding flex flex-col gap-8 items-center bg-[#f0f4f5]">
       <Title title="Gallery" />
       <h1 className="text-2xl font-bold">Photos from our gallery</h1>
       <Button

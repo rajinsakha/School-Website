@@ -44,15 +44,15 @@ const Page = () => {
       </div>
 
       <div className="px-8 sm:px-16 md:px-32 lg:px-40 padding-t padding-b flex flex-col lg:flex-row gap-24 bg-sky-700">
-        <div className="flex flex-col gap-4 w-full md:w-[70vw] lg:w-[50vw]">
+        <div className="flex flex-col gap-4 w-full md:w-[70vw] lg:w-[50vw] items-start">
           <h3 className="text-left text-xl lg:text-2xl text-white uppercase font-bold">{isLoading?"Loading...": event?.title}</h3>
           <Image
-            src={ event?.image_url || "/Hero.jpeg"}
+            src={ event?.image_url}
             alt="Single Event"
             width={0}
             height={0}
             sizes="100vw"
-            className="w-full h-[50vh] object-cover object-center"
+            className="w-full h-[50vh] lg:h-[500px] object-contain object-center"
           />
           <div>
            {isLoading?"Loading...": event?.body.split("\n").map((line,index)=>(
