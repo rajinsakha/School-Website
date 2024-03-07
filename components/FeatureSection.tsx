@@ -2,11 +2,17 @@ import React from 'react'
 import Title from './ui/title'
 import FeatureCard from './ui/featureCard'
 import { FaLeaf, FaBasketballBall } from "react-icons/fa";
-import { MdOutlineSportsSoccer } from "react-icons/md";
+import { RiCommunityFill } from "react-icons/ri";
+import { FaUsers, FaUserCog } from "react-icons/fa";
+import { GiBookshelf } from "react-icons/gi";
 
 const FeatureSection = () => {
 
   const featureData = [
+    {
+      icon: GiBookshelf,
+      title:'Quality Education'
+    },
     {
       icon: FaLeaf,
       title:'Surrounded by Nature'
@@ -16,29 +22,23 @@ const FeatureSection = () => {
       title:'Sports Activities'
     },
     {
-      icon: FaLeaf,
-      title:'Surrounded by Nature'
+      icon: RiCommunityFill,
+      title:'Community Engagement'
     },
     {
-      icon: FaLeaf,
-      title:'Surrounded by Nature'
+      icon: FaUsers,
+      title:'Equal Opportunities'
     },
     {
-      icon: FaLeaf,
-      title:'Surrounded by Nature'
+      icon: FaUserCog,
+      title:'Personal Development'
     },
-    {
-      icon: FaLeaf,
-      title:'Surrounded by Nature'
-    },
-    
-  
-
+   
   ]
 
 
   return (
-    <div className='padding flex flex-col gap-8 items-center'>
+    <div className='padding flex flex-col gap-8 items-center bg-slate-100 w-full'>
         <Title title='WHY SHREE JANAK?' />
         <h1 className='text-2xl font-bold'>The Advantage of Education in Shree Janak </h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'> 

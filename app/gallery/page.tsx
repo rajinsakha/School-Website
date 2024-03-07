@@ -22,9 +22,6 @@ const GalleryPage = () => {
     {url:"/winnerstudent.jpg"},
     {url:"/winnerteam.jpg"},
     {url:"/winnerbat.jpg"}
-
- 
-
   ];
 
   return (

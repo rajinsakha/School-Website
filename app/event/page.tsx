@@ -1,7 +1,6 @@
 "use client";
 import BlogCard from "@/components/ui/blogCard";
 import React, { useCallback, useEffect, useState } from "react";
-import axios from "axios";
 import { getAllEvents } from "@/lib/api/api";
 import { IEvent } from "@/interface/EventPage";
 import EventSkeleton from "@/components/ui/eventSkeleton";

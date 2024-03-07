@@ -22,17 +22,9 @@ const About = () => {
       <div className="flex-1 flex flex-col gap-8">
         <Title title="About Us" />
         <div className="flex flex-col gap-4">
-        <p >
-          Sopot Hill is a new opportunity for extensive care for the development
-          and education of children through three programs – preparatory
-          preschool program, elementary school and secondary school </p>
-          <p>With
-          everyday sports activities and a creative approach to traditional
-          content, we equally develop both movement and thought!</p>   
-          <p>We nurture the
-          mind and the body – at just 50 km from the center of Belgrade, in the
-          municipality of Sopot, on the slopes of the Kosmaj Mountain, with
-          homemade food and healthy air. </p>
+        <p className="text-justify">
+        Shree Janak school is an educational institution where students, typically ranging from young children to adolescents, receive structured instruction and guidance in various subjects and skills. School provides a learning environment equipped with teachers, curriculum, facilities, and resources aimed at fostering intellectual, social, and emotional development. 
+        <br/><br/>They often follow a formal system of education, such as public, private, or homeschooling, and may offer programs tailored to different age groups and academic levels. The primary goal of schools is to impart knowledge, promote critical thinking, and prepare students for future academic, professional, and personal endeavors.</p>
         </div>
       
     
