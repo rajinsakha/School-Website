@@ -1,5 +1,6 @@
 "use client";
 import EventSideBar from "@/components/EventSideBar";
+import Loader from "@/components/ui/Loader";
 import { IEvent } from "@/interface/EventPage";
 import { getSingleEvent } from "@/lib/api/api";
 import Image from "next/image";
@@ -37,26 +38,28 @@ const Page = () => {
 
   return (
     <section>
-      <div className="padding bg-sky-800 flex items-center justify-center ">
-        <h1 className="text-white font-bold text-5xl tracking-wide uppercase">
+      <div className="padding bg-blue-700 flex items-center justify-center ">
+        <h1 className="text-white font-bold text-2xl sm:text-3xl lg:text-5xl tracking-wide uppercase ">
        {isLoading?"Loading...": event?.title}
         </h1>
       </div>
 
-      <div className="px-8 sm:px-16 md:px-32 lg:px-40 padding-t padding-b flex flex-col lg:flex-row gap-24 bg-sky-700">
+      {isLoading ? <Loader height="50" />  : 
+      <div className="px-8 sm:px-16 md:px-32 lg:px-40 padding-t padding-b flex flex-col lg:flex-row gap-24 bg-slate-50">
         <div className="flex flex-col gap-4 w-full md:w-[70vw] lg:w-[50vw] items-start">
-          <h3 className="text-left text-xl lg:text-2xl text-white uppercase font-bold">{isLoading?"Loading...": event?.title}</h3>
+ 
+          <h3 className="text-left text-xl sm:text-2xl lg:text-3xl text-blue-700 uppercase font-bold">{isLoading?"Loading...": event?.title}</h3>
           <Image
-            src={ event?.image_url}
+            src={event?.image}
             alt="Single Event"
             width={0}
             height={0}
             sizes="100vw"
-            className="w-full h-[50vh] lg:h-[500px] object-contain object-center"
+            className="w-full h-[50vh] lg:h-[500px] object-contain object-left"
           />
           <div>
-           {isLoading?"Loading...": event?.body.split("\n").map((line,index)=>(
-            <p key={index} className="mb-6 text-white text-justify">{line}</p>
+           {event?.body.split("\n").map((line,index)=>(
+            <p key={index} className="mb-6 text-black text-justify">{line}</p>
            ))}
           </div>
         </div>
@@ -68,6 +71,7 @@ const Page = () => {
             
         </div>
       </div>
+      }
     </section>
   );
 };

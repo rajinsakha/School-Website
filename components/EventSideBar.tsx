@@ -3,6 +3,7 @@ import React, { Suspense, useCallback, useEffect, useState } from "react";
 import EventCard from "./ui/eventCard";
 import { IEvent } from "@/interface/EventPage";
 import { getAllEvents } from "@/lib/api/api";
+import Loader from "./ui/Loader";
 
 const EventSideBar = () => {
   const [events, setEvents] = useState<IEvent[]>([]);
@@ -32,7 +33,7 @@ const EventSideBar = () => {
       </div>
 
       {isLoading ? ( // Display loading indicator if still loading
-          <div>Loading...</div>
+         <Loader height="20"/>
         ) : (
           // Once data is fetched, display EventCards
           events?.slice(0, 5).map((event: IEvent) => (

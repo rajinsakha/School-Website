@@ -3,7 +3,7 @@ export interface IEvent{
     id: number;
     title: string;
     date: string;
-    image: null;
+    image: any;
     image_url: any;
     body: string;
   }

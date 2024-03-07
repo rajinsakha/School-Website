@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 
 import { eventFormSchema } from "@/lib/formSchema";
 import { useFormik } from "formik";
@@ -18,9 +18,14 @@ const EventForm = () => {
     image: null,
   };
 
+  const inputFileRef = useRef<HTMLInputElement>(null);
+
   const resetForm = () => {
     eventFormik.setValues(initialValues);
     eventFormik.setTouched({});
+    if (inputFileRef.current) {
+      inputFileRef.current.value = ""; // Reset file input value
+    }
   };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +43,8 @@ const EventForm = () => {
       // Handle form submission logic here
       console.log("Form Submitted!");
       try {
-        console.log("Form submitted with values:", values);
+       
+        console.log("Form submitted with values:",values);
         const res = await addEvent(values);
         if (res.status === 201) {
           resetForm();
@@ -78,7 +84,7 @@ const EventForm = () => {
         <Label htmlFor="image" className="text-black dark:text-white">
           Image
         </Label>
-        <Input name="image" type="file" accept="image/*" onChange={handleFileChange} />
+        <Input   ref={inputFileRef}  name="image" type="file" accept="image/*" onChange={handleFileChange}  />
         {eventFormik.errors.image && eventFormik.touched.image ? (
           <p className="text-red-600 mt-1 text-[13.4px]">
             {eventFormik.errors.image}

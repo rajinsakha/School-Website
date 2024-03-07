@@ -33,7 +33,7 @@ function formatDate(isoDateString:string) {
   return (
     <div className="flex flex-col gap-4 p-4 bg-white hover:shadow-xl hover:transition-all hover:cursor-pointer rounded-lg">
       <Image
-        src={event.image_url || '/hero.jpeg'}
+        src={event.image || '/hero.jpeg'}
         alt="Event Image"
         width={0}
         height={0}
