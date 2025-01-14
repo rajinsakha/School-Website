@@ -4,6 +4,8 @@ import React from "react";
 import about from "../../public/Teachers.jpg";
 import StaffCard from "@/components/ui/staffCard";
 import { IStaffCard } from "@/interface/AboutPage";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const AboutPage = () => {
   const principalInfo: IStaffCard = {
@@ -158,6 +160,9 @@ const AboutPage = () => {
   });
 
   return (
+    <>
+    <Navbar />
+
     <section>
       <div className="padding flex max-lg:flex-col gap-16 max-lg:text-sm bg-slate-50 dark:bg-black">
         <div className="flex flex-1 flex-col gap-8">
@@ -232,6 +237,8 @@ const AboutPage = () => {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

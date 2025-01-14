@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -18,11 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">
-     <Navbar />
-          {children}
-          <Toaster />
-          <Footer />
-
+       
+        {children}
+        <Toaster />
+       
       </body>
     </html>
   );

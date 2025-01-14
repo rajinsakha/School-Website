@@ -18,7 +18,7 @@ const Links = ({links}: LinksProps) => {
   return (
     <>
         {links.map((link,index)=>(
-            <Link href={link.path} key={index} className={`${pathname === link.path && 'active'} hover:text-blue-600`}>{link.title}</Link>
+            <Link href={link.path} key={index} className={`border-b-2 border-transparent pb-1 ${pathname === link.path && 'active'}  hover:text-blue-600 hover:border-blue-600 `}>{link.title}</Link>
         ))}
     </>
   )

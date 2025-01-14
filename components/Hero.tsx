@@ -1,30 +1,33 @@
-import React from "react";
-import { Button } from "./ui/button";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section
-      className={`bg-cover bg-center w-full relative h-[92vh] padding`}
-      style={{ backgroundImage: 'url("/Hero.jpeg")' }}
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url("/Hero.jpeg")', filter: "blur(1px)" }}
-      ></div>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative h-full flex flex-col justify-start items-center gap-8 text-white">
-        <h1 className="text-6xl font-bold text-center">
-          Welcome To
-          <span className="block mt-4">Shree Janak Secondary School</span>{" "}
+    <section className="relative h-[calc(100vh-4rem)]  w-full overflow-hidden">
+      <Image
+        src="/hero.jpeg"
+        alt="Shree Janak Secondary School"
+        width={1920}
+        height={1080}
+        className="absolute inset-0 object-cover w-full h-full"
+        priority
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-50" />
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+          Shree Janak Secondary School
         </h1>
-        <p>We believe in providing education for everyone</p>
-        <Button asChild className= "bg-blue-600 dark:bg-blue-600  hover:bg-blue-800 dark:text-white dark:hover:bg-blue-800">
-          <Link href="/contact">Contact Us</Link>
-        </Button>
+        <p className="text-xl md:text-2xl mb-8 max-w-2xl">
+          Empowering minds, shaping futures, and nurturing excellence in education since 1973 A.D.
+        </p>
+        <Link
+          href="/contact"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg"
+        >
+          Apply Now
+        </Link>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;

@@ -1,5 +1,7 @@
 "use client";
 import EventSideBar from "@/components/EventSideBar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Loader from "@/components/ui/Loader";
 import { IEvent } from "@/interface/EventPage";
 import { getSingleEvent } from "@/lib/api/api";
@@ -37,6 +39,9 @@ const Page = () => {
 
 
   return (
+    <>
+    <Navbar />
+    
     <section>
       <div className="padding bg-blue-700 flex items-center justify-center ">
         <h1 className="text-white font-bold text-2xl sm:text-3xl lg:text-5xl tracking-wide uppercase ">
@@ -73,6 +78,8 @@ const Page = () => {
       </div>
       }
     </section>
+    <Footer />
+    </>
   );
 };
 

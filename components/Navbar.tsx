@@ -42,7 +42,7 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <nav className="padding-x py-8 flex justify-between items-center w-full h-[50px]">
+    <nav className="padding-x py-8 flex justify-between items-center w-full h-[50px] sticky top-0 bg-white dark:bg-black shadow-md z-20"  >
       <Image src="/logo.jpg" alt="logo" width={50} height={50} sizes="100vw" />
       <div className="flex justify-between items-center gap-10 max-lg:hidden lg:mr-8">
         <Links links={navLinks} />

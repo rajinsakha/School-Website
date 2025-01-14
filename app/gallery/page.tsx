@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { ImageProps } from "@/interface/GalleryPage";
 import Image from "next/image";
 import React from "react";
@@ -25,6 +27,9 @@ const GalleryPage = () => {
   ];
 
   return (
+    <>
+    <Navbar />
+  
     <section className="flex flex-col ">
           <div className="padding bg-blue-700 flex items-center justify-center">
         <h1 className="text-white font-bold text-5xl tracking-wide">
@@ -53,6 +58,8 @@ const GalleryPage = () => {
       </div>
       </section>
     </section>
+    <Footer />
+    </>
   );
 };
 

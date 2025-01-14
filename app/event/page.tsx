@@ -4,6 +4,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import { getAllEvents } from "@/lib/api/api";
 import { IEvent } from "@/interface/EventPage";
 import EventSkeleton from "@/components/ui/eventSkeleton";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Page = () => {
   const [events, setEvents] = useState<IEvent[]>([]);
@@ -24,6 +26,8 @@ const Page = () => {
   }, [getData]);
 
   return (
+    <>
+    <Navbar />
     <section className="flex flex-col">
       <div className="padding bg-blue-700 flex items-center justify-center">
         <h1 className="text-white font-bold text-5xl tracking-wide">
@@ -39,6 +43,8 @@ const Page = () => {
             ))}
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

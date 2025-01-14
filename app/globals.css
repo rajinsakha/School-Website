@@ -62,7 +62,7 @@
 
 @layer utilities{
   .active{
-    @apply text-blue-600
+    @apply text-blue-600 border-blue-600 font-medium
   }
 }
 

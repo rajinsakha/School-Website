@@ -4,10 +4,14 @@ import ContactForm from "@/components/ContactForm";
 import Map from "@/components/ui/map";
 import { FaPhone, FaLocationDot,FaClock } from "react-icons/fa6";
 import ContactIcon from "@/components/ui/contact";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 
 const ContactPage = () => {
   return (
+    <>
+    <Navbar />
     <section className="padding-x sm:py-16 py-8 flex flex-col bg-[#144466] gap-16">
       <div className="flex flex-col items-center gap-4 text-white">
         <div className="flex items-center gap-4 mb-8">
@@ -39,6 +43,8 @@ const ContactPage = () => {
 
 
     </section>
+    <Footer />
+    </>
   );
 };
 

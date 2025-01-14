@@ -11,8 +11,6 @@ import EventSkeleton from "./ui/eventSkeleton";
 
 const EventSection = ({events}:{events:IEvent[]}) => {
 
-
-
   return (
     <div className="padding flex flex-col gap-8 items-center bg-slate-300 dark:bg-black w-full">
     <Title title="Events" />

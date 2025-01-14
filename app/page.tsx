@@ -2,8 +2,10 @@
 import About from "@/components/About";
 import EventSection from "@/components/EventSection";
 import FeatureSection from "@/components/FeatureSection";
+import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
 import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 import { IEvent } from "@/interface/EventPage";
 import { getAllEvents } from "@/lib/api/api";
 import { Suspense, useCallback, useEffect, useState } from "react";
@@ -32,12 +34,14 @@ export default function Home() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between">
+        <Navbar />
         <Hero />
         <About />
         <FeatureSection />
         <GallerySection />
 
         <EventSection events={events} />
+        <Footer />
       </main>
     </>
   );
